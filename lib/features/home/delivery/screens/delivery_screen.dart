@@ -144,7 +144,7 @@ class _DeliveryScreenState extends ConsumerState<DeliveryScreen> {
             ),
             hint: "Restaurant name or a dish...",
             onClick: () {
-              Navigator.pushNamed(context, SearchScreen.routeName);
+              // Navigator.pushNamed(context, SearchScreen.routeName);
             },
           ),
           automaticallyImplyLeading: false,
