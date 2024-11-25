@@ -6,13 +6,10 @@ import 'package:zomoto_task/common/constants/colors.dart';
 import 'package:zomoto_task/common/widgets/add_filter_widget.dart';
 import 'package:zomoto_task/common/widgets/circular_image.dart';
 import 'package:zomoto_task/common/widgets/search_bar_widget.dart';
-import 'package:zomoto_task/features/home/delivery_location/screens/choose_delivery_location_screen.dart';
 import 'package:zomoto_task/features/home/home/widgets/recipe_item_widget.dart';
 import 'package:zomoto_task/common/widgets/restaurant_item_widget.dart';
 import 'package:zomoto_task/common/models/pair.dart';
-import 'package:zomoto_task/features/home/restaurant_page/screens/restaurant_page_screen.dart';
 import 'package:zomoto_task/features/home/restaurants_and_dishes/restaurants_and_dishes_screen.dart';
-import 'package:zomoto_task/features/home/search_screen/search_screen.dart';
 import 'package:zomoto_task/navigation/navigation.dart';
 
 class DeliveryScreen extends ConsumerStatefulWidget {
@@ -411,8 +408,7 @@ class _DeliveryScreenState extends ConsumerState<DeliveryScreen> {
               discount:
                   "${Random().nextInt(60)}% OFF up to ${Random().nextInt(100)}",
               onClick: (restaurant) {
-                Navigator.of(context, rootNavigator: true)
-                    .pushNamed(RestaurantPageScreen.routeName);
+                print('detail');
               },
             );
           },

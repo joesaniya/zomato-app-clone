@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:zomoto_task/features/home/delivery_location/screens/choose_delivery_location_screen.dart';
-import 'package:zomoto_task/features/home/restaurant_page/screens/restaurant_page_screen.dart';
 import 'package:zomoto_task/features/home/search_screen/search_screen.dart';
 import 'package:zomoto_task/features/loginandsignup/screens/login_screen.dart';
 import 'package:zomoto_task/features/loginandsignup/screens/verify_otp_screen.dart';
 import 'package:zomoto_task/features/home/main_home/screens/main_home_screen.dart';
-import 'package:zomoto_task/features/home/delivery_summary/screens/delivery_summary_screen.dart';
 import 'package:zomoto_task/features/home/profile/screens/activity_screen.dart';
 import 'package:zomoto_task/features/home/restaurants_and_dishes/restaurants_and_dishes_screen.dart';
 
@@ -24,12 +21,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case RestaurantsAndDishesScreen.routeName:
       page = const RestaurantsAndDishesScreen();
       break;
-    case RestaurantPageScreen.routeName:
-      page = const RestaurantPageScreen();
-      break;
-    case DeliverySummaryScreen.routeName:
-      page = const DeliverySummaryScreen();
-      break;
+
     case SearchScreen.routeName:
       page = const SearchScreen();
       break;
@@ -40,9 +32,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       final phoneNumber = arguments["phoneNumber"] as String;
       page = VerifyOTPScreen(verificationId, resendToken, phoneNumber);
       break;
-    case ChooseDeliveryLocationScreen.routeName:
-      page = const ChooseDeliveryLocationScreen();
-      break;
+
     default:
       page = const Scaffold(
         body: Center(

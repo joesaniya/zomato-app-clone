@@ -6,7 +6,6 @@ import 'package:zomoto_task/common/models/pair.dart';
 import 'package:zomoto_task/common/widgets/add_filter_widget.dart';
 import 'package:zomoto_task/features/home/home/widgets/recipe_item_widget.dart';
 import 'package:zomoto_task/common/widgets/restaurant_item_widget.dart';
-import 'package:zomoto_task/features/home/restaurant_page/screens/restaurant_page_screen.dart';
 
 class RestaurantsScreen extends ConsumerStatefulWidget {
   const RestaurantsScreen({Key? key}) : super(key: key);
