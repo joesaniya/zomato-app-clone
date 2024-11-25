@@ -45,9 +45,6 @@ class _DeliveryScreenState extends ConsumerState<DeliveryScreen> {
                   InkWell(
                     onTap: () {
                       print('location clicked');
-                      /*  Navigator.pushNamed(
-                          context, ChooseDeliveryLocationScreen.routeName);
-                    */
                     },
                     child: Row(
                       children: [
