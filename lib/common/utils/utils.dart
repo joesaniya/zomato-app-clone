@@ -32,9 +32,6 @@ String getCurrencySymbol(BuildContext context) {
 }
 
 extension TextStyleX on TextStyle {
-  /// A method to underline a text with a customizable [distance] between the text
-  /// and underline. The [color], [thickness] and [style] can be set
-  /// as the decorations of a [TextStyle].
   TextStyle underlined({
     Color? color,
     double distance = 1,
