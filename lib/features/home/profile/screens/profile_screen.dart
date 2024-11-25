@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zomoto_task/common/constants/colors.dart';
-import 'package:zomoto_task/features/loginandsignup/controller/login_signup_controller.dart';
 import 'package:zomoto_task/features/home/profile/widgets/profile_header_widget.dart';
 import 'package:zomoto_task/navigation/navigation.dart';
 
@@ -48,11 +47,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         child: Column(
                           children: [
                             SizedBox(
-                              height: ref
-                                      .read(loginSignUpControllerProvider)
-                                      .isUserSigned
-                                  ? 155
-                                  : 115,
+                              height: 155,
                             ),
                             likesPaymentsSettingsWidget(),
                             const SizedBox(

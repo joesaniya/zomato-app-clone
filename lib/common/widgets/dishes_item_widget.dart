@@ -4,7 +4,7 @@ import 'package:zomoto_task/common/constants/colors.dart';
 import 'package:zomoto_task/common/utils/utils.dart';
 import 'package:zomoto_task/common/widgets/add_button.dart';
 import 'package:zomoto_task/common/widgets/bordered_rating_widget.dart';
-import 'package:zomoto_task/common/widgets/star_rating.dart';
+
 import 'package:zomoto_task/common/widgets/veg_or_non_veg_icon_widget.dart';
 
 class DishesItemWidget extends StatelessWidget {

@@ -5,7 +5,6 @@ import 'package:zomoto_task/common/models/pair.dart';
 import 'package:zomoto_task/common/widgets/search_bar_widget.dart';
 import 'package:zomoto_task/features/home/restaurants_and_dishes/dishes/screens/dishes_screen.dart';
 import 'package:zomoto_task/features/home/restaurants_and_dishes/restaurants/screens/restaurants_screen.dart';
-import 'package:zomoto_task/features/home/search_screen/search_screen.dart';
 
 class RestaurantsAndDishesScreen extends ConsumerStatefulWidget {
   static const routeName = "/restaurants-and-dishes-screen";

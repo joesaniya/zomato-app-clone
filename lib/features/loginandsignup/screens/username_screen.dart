@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:zomoto_task/common/constants/colors.dart';
 import 'package:zomoto_task/common/widgets/custom_button.dart';
 

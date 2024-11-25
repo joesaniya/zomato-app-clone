@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zomoto_task/features/home/search_screen/search_screen.dart';
 import 'package:zomoto_task/features/loginandsignup/screens/login_screen.dart';
-import 'package:zomoto_task/features/loginandsignup/screens/verify_otp_screen.dart';
 import 'package:zomoto_task/features/home/main_home/screens/main_home_screen.dart';
-import 'package:zomoto_task/features/home/profile/screens/activity_screen.dart';
 import 'package:zomoto_task/features/home/restaurants_and_dishes/restaurants_and_dishes_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -15,22 +13,13 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case MainHomeScreen.routeName:
       page = const MainHomeScreen();
       break;
-    case ActivityScreen.routeName:
-      page = const ActivityScreen();
-      break;
+
     case RestaurantsAndDishesScreen.routeName:
       page = const RestaurantsAndDishesScreen();
       break;
 
     case SearchScreen.routeName:
       page = const SearchScreen();
-      break;
-    case VerifyOTPScreen.routeName:
-      final arguments = routeSettings.arguments as Map<String, dynamic>;
-      final verificationId = arguments["verificationId"] as String;
-      final resendToken = arguments["resendToken"] as int?;
-      final phoneNumber = arguments["phoneNumber"] as String;
-      page = VerifyOTPScreen(verificationId, resendToken, phoneNumber);
       break;
 
     default:

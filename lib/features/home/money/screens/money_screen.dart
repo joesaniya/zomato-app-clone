@@ -5,7 +5,6 @@ import 'package:styled_text/tags/styled_text_tag.dart';
 import 'package:styled_text/widgets/styled_text.dart';
 import 'package:zomoto_task/common/constants/colors.dart';
 import 'package:zomoto_task/features/home/money/widgets/gift_banner_widget.dart';
-import 'package:zomoto_task/features/home/profile/screens/profile_screen.dart';
 import 'package:zomoto_task/navigation/navigation.dart';
 
 class MoneyScreen extends ConsumerStatefulWidget {

@@ -3,8 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zomoto_task/common/constants/colors.dart';
 import 'package:zomoto_task/common/utils/utils.dart';
 import 'package:zomoto_task/common/widgets/custom_button.dart';
-import 'package:zomoto_task/features/loginandsignup/controller/login_signup_controller.dart';
-import 'package:zomoto_task/features/loginandsignup/screens/verify_otp_screen.dart';
 import 'package:zomoto_task/features/home/main_home/screens/main_home_screen.dart';
 import 'dart:developer';
 
@@ -20,78 +18,6 @@ class LoginScreen extends ConsumerStatefulWidget {
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   final phoneEditingController = TextEditingController();
   var isSigning = false;
-
-  void googleSignInOrSignUp() {
-    showLoaderDialog(context);
-    ref.read(loginSignUpControllerProvider).signInOrSignUpWithGoogle().then(
-      (value) {
-        Navigator.pop(context);
-        if (value.first == null) {
-          showSnackBar(context, value.second ?? "Some Error Occurred");
-        } else {
-          if (value.first?.second == true) {
-            showSnackBar(context, "New User to be created");
-          } else {
-            Navigator.pushNamedAndRemoveUntil(
-                context, MainHomeScreen.routeName, (route) => false);
-          }
-        }
-        setState(() {
-          isSigning = false;
-        });
-      },
-    );
-  }
-
-  void emailSignInOrSignUp() {}
-
-  void facebookSignInOrSignUp(BuildContext context) {
-    showLoaderDialog(context);
-    ref.read(loginSignUpControllerProvider).signInOrSignUpWithFacebook().then(
-      (value) {
-        Navigator.pop(context);
-        if (value.first == null) {
-          showSnackBar(context, value.second ?? "Some Error Occurred");
-        } else {
-          if (value.first?.second == true) {
-            showSnackBar(context, "New User to be created");
-          } else {
-            Navigator.pushNamedAndRemoveUntil(
-                context, MainHomeScreen.routeName, (route) => false);
-          }
-        }
-      },
-    );
-  }
-
-  void phoneSignInOrSignUp() {
-
-    showLoaderDialog(context);
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pop(context);
-      final args = <String, dynamic>{
-        "verificationId": "verificationId",
-        "resendToken": 5,
-        "phoneNumber": phoneEditingController.text
-      };
-      Navigator.pushNamed(context, VerifyOTPScreen.routeName, arguments: args);
-    });
-
-    // if (phoneEditingController.text.isNotEmpty) {
-    //   showLoaderDialog(context);
-    //   ref.read(loginSignUpControllerProvider).signInOrSignUpWithPhone(
-    //       "+91${phoneEditingController.text}", (verificationId, resendToken) {
-    //     Navigator.pop(context);
-    //     final args = <String, dynamic>{
-    //       "verificationId": verificationId,
-    //       "resendToken": resendToken,
-    //       "phoneNumber": phoneEditingController.text
-    //     };
-    //     Navigator.pushNamed(context, VerifyOTPScreen.routeName,
-    //         arguments: args);
-    //   });
-    // }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -239,10 +165,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child:
-                CustomButton(text: "Continue", onPressed: phoneSignInOrSignUp),
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: CustomButton(
+                text: "Continue",
+                onPressed: () {
+                  Navigator.pop(context);
+                  showSnackBar(context, "Success");
+                  Navigator.pushNamed(context, MainHomeScreen.routeName);
+                },
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 25,
@@ -279,7 +210,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               OutlinedButton(
-                onPressed: googleSignInOrSignUp,
+                onPressed: () {},
                 style: ButtonStyle(
                   overlayColor: MaterialStateProperty.all(lightGrey),
                   shape: MaterialStateProperty.all(

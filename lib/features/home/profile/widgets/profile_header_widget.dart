@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zomoto_task/common/constants/colors.dart';
 import 'package:zomoto_task/common/widgets/circular_image.dart';
-import 'package:zomoto_task/features/loginandsignup/controller/login_signup_controller.dart';
 
 class ProfileHeader extends ConsumerWidget {
   const ProfileHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var isUserSignedIn = ref.read(loginSignUpControllerProvider).isUserSigned;
-    final textTheme = Theme.of(context).textTheme;
+ final textTheme = Theme.of(context).textTheme;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
@@ -28,7 +26,7 @@ class ProfileHeader extends ConsumerWidget {
             child: IntrinsicHeight(
               child: Row(
                 children: [
-                  if (isUserSignedIn)
+              
                     const Padding(
                       padding: EdgeInsets.only(right: 15.0),
                       child: CircularImage(
@@ -43,26 +41,24 @@ class ProfileHeader extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          isUserSignedIn ? "shinchan" : "Your profile",
+                        "shinchan" ,
                           style: textTheme.titleSmall
                               ?.copyWith(fontSize: 26, height: 1),
                           maxLines: 1,
                           overflow: TextOverflow.clip,
                         ),
                         Padding(
-                          padding: isUserSignedIn
-                              ? EdgeInsets.zero
-                              : const EdgeInsets.only(top: 4.0, bottom: 10),
+                          padding: EdgeInsets.zero
+                            ,
                           child: Text(
-                            isUserSignedIn
-                                ? "shinchan@gmail.com"
-                                : "Log in or sign up to view your complete pro...",
+                           "shinchan@gmail.com"
+                              ,
                             style: textTheme.bodyLarge?.copyWith(fontSize: 14),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        if (isUserSignedIn)
+                    
                           GestureDetector(
                             onTap: () {},
                             child: Row(
@@ -80,27 +76,7 @@ class ProfileHeader extends ConsumerWidget {
                               ],
                             ),
                           ),
-                        if (!isUserSignedIn)
-                          SizedBox(
-                            width: double.infinity,
-                            height: 50,
-                            child: OutlinedButton(
-                              onPressed: () {},
-                              style: OutlinedButton.styleFrom(
-                                side: const BorderSide(color: primaryColor),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              child: Text(
-                                "Continue",
-                                style: textTheme.labelSmall?.copyWith(
-                                  fontSize: 16,
-                                  color: primaryColor,
-                                ),
-                              ),
-                            ),
-                          ),
+                       
                       ],
                     ),
                   ),
@@ -108,7 +84,7 @@ class ProfileHeader extends ConsumerWidget {
               ),
             ),
           ),
-          if (isUserSignedIn)
+       
             Container(
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
